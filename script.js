@@ -14,16 +14,48 @@ function getComputerChoice(choices){
     return choices[Math.floor(Math.random()*3)];
 }
 
-function getComputerChoice(choices){
-    console.log("Enter Your Choice(0, 1 or 2):");
-    console.log(" 1. For Rock \n 2. For Paper \n 3. For Scissor");
-    console.log("Your choice: ");
+function getUserChoice(choices){
+    console.log("Enter Your Choice(1, 2, 3 or 0 for quiting):");
+    console.log(" 1. For Rock \n 2. For Paper \n 3. For Scissor \n 0. Quit Game" );
+    let choice = prompt("Enter your choice: ");
+    if(choice == 0){
+        console.log("Game Over");
+        return 0;
+    }
+    return choices[choice-1];
+}
+
+function calculateWinner(computerChoice, userChoice){
+
+    console.log("Your choice: " + userChoice + " | Computer choice: "+ computerChoice);
+
+    // for draw
+    if(userChoice == computerChoice ) return 2;
+
+    // for user winner
+    if((userChoice == 'rock' && computerChoice == 'scissor') || 
+    (userChoice == 'paper' && computerChoice == 'rock') ||
+    (userChoice == 'scissor' && computerChoice == 'paper'))
+     return 1;
+
+    // for computer winner 
+    return 0;
 }
 
 
-function main(){
+
+
+function showResult(winner){
+    if(winner == 2)
+        console.log("Match is Draw!");
+    else if(winner == 1) 
+        console.log("You win this round!");
+    else
+        console.log("Computer wins this round!");
+}
+
+async function playGame(gameTime){
     
-    let gameTime = 10;
     let userPoints = 0;
     let computerPoints = 0;
 
@@ -35,10 +67,20 @@ function main(){
         
         const computerChoice = getComputerChoice(choices);
         const userChoice = getUserChoice(choices);
+        
+        if(userChoice === 0) 
+            break;
+
         let winner = calculateWinner(computerChoice, userChoice);
         
-        // points calculation
-        (winner === 0)?computerPoints++:userPoints++;
+        showResult(winner);
+        
+        // points updation 
+        (winner === 0) ? computerPoints++ : userPoints++;
+
+        console.log("Your Points: " + userPoints + " | Computer Points: " + computerPoints);
+        console.log("====================================================");
+        await new Promise(resolve => setTimeout(resolve, 500));
     }
 
     // result declaration
@@ -54,4 +96,4 @@ function main(){
 
 }
 
-main();
+playGame(10);
