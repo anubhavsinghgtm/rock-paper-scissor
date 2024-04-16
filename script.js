@@ -76,7 +76,8 @@ async function playGame(gameTime){
         showResult(winner);
         
         // points updation 
-        (winner === 0) ? computerPoints++ : userPoints++;
+        if(winner == 0) computerPoints++;
+        else if(winner == 1) userPoints++;
 
         console.log("Your Points: " + userPoints + " | Computer Points: " + computerPoints);
         console.log("====================================================");
@@ -95,5 +96,3 @@ async function playGame(gameTime){
     }
 
 }
-
-playGame(10);
