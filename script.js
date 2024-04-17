@@ -97,7 +97,7 @@ function stopGame(){
 
 function showWinner(winner){
     const finalResultEle = document.querySelector(".final-result");
-    finalResultEle.innerHTML = " "+ winner + " wins!!!"
+    finalResultEle.innerHTML = " "+ winner + " win!!!"
 }
 
 async function playGame(userChoice){
