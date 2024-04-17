@@ -1,11 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Rock, Paper & Scissor</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="playing-area">
+            <div class="start-game">
+                <h3>Play Game!</h3>
+                <button class="start-game-btn">Start</button>
+            </div>
+            <div class="game-time hide">
+                <h3>Select Your Choice</h3>
+                <div class="choices">
+                    <button class="playing-btn" onclick="playGame('rock')">Rock</button>
+                    <button class="playing-btn" onclick="playGame('paper')">Paper</button>
+                    <button class="playing-btn" onclick="playGame('scissor')">Scissor</button>
+                </div>
+            </div>
+            <div class="current-result hide">
+                <div class="player-choice">
+        
+                </div>
+                <div class="computer-choice">
+                
+                </div>
+                <div class="current-winner">
+
+                </div>
+            </div>
+            <div class="final-result">
+
+            </div>
+            
+        </div>
+        <div class="score-area hide">
+            <h3>Score</h3> 
+            <div class="scorecard">
+                <div class="player">
+                    Player Score: <span id="player-score">0</span> <br>
+                </div>
+                <div class="computer">
+                    Computer Score: <span id="computer-score">0</span>
+                </div>
+                
+            </div>
+            <div class="result-card">
+
+            </div>
+        </div>
+    </div>
+
+
 <script src="script.js"></script>
+</body>
+</html>
 
 
-Steps to start this game: 
-<or>
-    <li>Open Console</li>
-    <li>Click on Play</li>
-</or>
 
-<button onclick="playGame(5)">Play</button>
+
 
