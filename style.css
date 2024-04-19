@@ -15,7 +15,7 @@
 }
 
 .playing-area{
-    width: 30vw;
+    width: 40vw;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
@@ -91,6 +91,10 @@
     align-items: center;
 }
 
+.start-game h3{
+    text-align: center;
+}
+
 .start-game-btn{
     padding: 12px 36px;
     font-size: 30px;
@@ -128,8 +132,67 @@
     color: #dfdfdf;
 }
 
-@media (width < 990px) {
+@media (width < 1160px) {
     .main-container{
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
+
+    .playing-area{
+        width: 60vw;
+    }
+
+    .score-area{
+        width: 60vw;
+    }
+
+    
+    
+}
+
+@media (width < 820px) {
+    .playing-area{
+        width: 80vw;
+    }
+
+    .playing-btn {
+        font-size: 18px;
+        padding: 8px 24px;
+    }
+
+    .score-area{
+        width: 80vw;
+    }
+
+    .score-area h3{
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .playing-area h3 {
+        font-size: 30px;
+        padding-bottom: 28px;
+    }
+
+    .start-game-btn {
+        padding: 10px 30px;
+        font-size: 24px;
+    }
+
+    .current-result {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    @media (width < 540px) {
+        
+    .choices {
+        flex-wrap: wrap;
+    }
+
+    .playing-btn{
+        flex: 1;
+    }
+
+    }
+    
 }
